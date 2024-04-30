@@ -1,0 +1,33 @@
+.App {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-image: url('./src/images/scale.webp');
+}
+.movirContainer img {
+  object-fit: cover;
+}
+.movieContainer h4 {
+  margin: 0%;
+}
+
+@media (min-width: 350px) {
+  .movieContainer {
+    grid-column: span 6;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.7);
+    padding: 10px;
+  }
+}
+@media (min-width: 768px) {
+  .movieContainer {
+    grid-column: span 4;
+    padding: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .movieContainer {
+    grid-column: span 3;
+    padding: 10px;
+  }
+}

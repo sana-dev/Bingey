@@ -1,21 +1,26 @@
 .active {
-  background-color: #263164;
+  background-color: rgb(255, 247, 0);
+  color: #000;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(11, 11, 53);
+  background-color: rgb(0, 0, 0);
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 nav .title {
   font-size: 1.5rem;
   margin: 1rem;
   font-weight: bold;
   text-decoration: none;
-  color: aliceblue;
+  color: rgb(255, 247, 5);
+}
+.logo {
+  width: 40px;
 }
 nav ul {
   display: flex;
@@ -32,7 +37,7 @@ nav ul li a {
   border-radius: 0.5rem;
 }
 nav ul li a:not(.active):hover {
-  background-color: #172554;
+  background-color: rgb(16, 119, 148);
 }
 nav .menu {
   display: none;

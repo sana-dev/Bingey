@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './NavBar.css';
 import { NavLink, Link } from 'react-router-dom';
-
+import logoImage from './logo/logo.png';
 interface NavBarProps {
   title: string;
 }
@@ -11,8 +11,9 @@ const NavBar = (props: NavBarProps) => {
   return (
     <nav>
       <Link to="/" className="title">
-        {props.title}
+        <img src={logoImage} alt="Logo" className="logo" /> {props.title}
       </Link>
+
       <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
         <span></span>
         <span></span>

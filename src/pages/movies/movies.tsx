@@ -31,15 +31,18 @@ function Movies() {
   /// I have to add the clean up
   return (
     <>
+      <h2 className="heading"> Popular Movies</h2>
       <div className="App">
         {movies.map((movie) => (
-          <div className="movieContainer">
-            <h4> {movie.title} </h4>
+          <div className="movieContainer" key={movie.id}>
+            <div className="movieInfo">
+              <h2>{movie.title}</h2>
+              <div>{movie.release_date}</div>
+            </div>
             <img
               src={`${IMAGE_BASE_URL}/${movie.poster_path}`}
               alt={movie.title}
             />
-            <p>{movie.release_date}</p>
           </div>
         ))}
       </div>

@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <Router>
-        <NavBar title="BINGEY APP" />
+        <NavBar title="BINGEY" />
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/movies" element={<Movies />} />

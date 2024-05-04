@@ -55,7 +55,7 @@ nav .menu span {
   background-color: white;
   border-radius: 0.2rem;
 }
-@media (max-width: 500px) {
+@media (max-width: 529px) {
   nav .menu {
     display: flex;
   }
@@ -67,6 +67,8 @@ nav .menu span {
     display: none;
     flex-direction: column;
     width: 100%;
+    padding-left: 0;
+    padding-right: 10px;
     margin-bottom: 0.25rem;
   }
 

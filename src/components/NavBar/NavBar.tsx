@@ -30,16 +30,6 @@ const NavBar = (props: NavBarProps) => {
             TV Show
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/auth" className="nav-link">
-            Auth
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/rated" className="nav-link">
-            Rated
-          </NavLink>
-        </li>
       </ul>
     </nav>
   );

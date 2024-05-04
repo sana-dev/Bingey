@@ -37,7 +37,7 @@ function Movies() {
           <div className="movieContainer" key={movie.id}>
             <div className="movieInfo">
               <h2>{movie.title}</h2>
-              <div>{movie.release_date}</div>
+              <div className="date">{movie.release_date}</div>
             </div>
             <img
               src={`${IMAGE_BASE_URL}/${movie.poster_path}`}

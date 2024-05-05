@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import './tv-show.css';
+import { Link } from 'react-router-dom';
+import './Tv-show.css';
+
 interface TvShow {
   id: number;
   original_name: string;
   poster_path: string;
-  release_date: string;
 }
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 function TvShow() {
@@ -31,16 +32,26 @@ function TvShow() {
   /// I have to add the clean up
   return (
     <>
+      <h2 className="heading"> Popular Show of All-Times</h2>
       <div className="App">
         {TvShow.map((TvShow) => (
-          <div className="movieContainer">
-            <h4> {TvShow.original_name} </h4>
-            <img
-              src={`${IMAGE_BASE_URL}/${TvShow.poster_path}`}
-              alt={TvShow.original_name}
-            />
-            <p>{TvShow.release_date}</p>
-          </div>
+          <Link
+            to={`/detail/${TvShow.id}`}
+            key={TvShow.id}
+            className="movieContainer"
+          >
+            <div key={TvShow.id}>
+              <div className="tvShow-Info">
+                <h2> {TvShow.original_name} </h2>
+              </div>
+              <div>
+                <img
+                  src={`${IMAGE_BASE_URL}/${TvShow.poster_path}`}
+                  alt={TvShow.original_name}
+                />
+              </div>
+            </div>
+          </Link>
         ))}
       </div>
     </>

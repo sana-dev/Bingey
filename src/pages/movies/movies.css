@@ -5,12 +5,14 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 .App {
   background-color: rgb(16, 16, 16);
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
 .movieContainer {
   position: relative;
   width: 200px;
@@ -40,15 +42,18 @@
   opacity: 1;
 }
 
-.movieInfo h1,
-.movieInfo p {
+.movieInfo h2,
+.movieInfo .date {
   margin: 0;
+  font-size: 16px;
 }
+
 .date {
   font-size: medium;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+/* Media queries */
 @media (max-width: 768px) {
   .App {
     justify-content: center;
@@ -69,6 +74,7 @@
     width: calc(33% - 20px);
   }
 }
+
 @media (min-width: 1080px) {
   .App {
     justify-content: flex-start;

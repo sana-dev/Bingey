@@ -1,4 +1,4 @@
-import './hero.css';
+import './Hero.css';
 import bgImage from './images/video.mp4';
 
 function Hero() {

@@ -1,0 +1,81 @@
+body {
+  background-color: #000; /* Set background color to black */
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+}
+
+.DetailContainer {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgb(255, 247, 5);
+  border-radius: 8px;
+  box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.DetailImage {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 28px;
+  color: #000000;
+}
+
+.Date {
+  margin-top: 8px;
+  font-size: 20px;
+  color: #000000;
+}
+
+.Overview {
+  margin-top: 16px;
+  font-size: 18px;
+  text-align: left;
+  color: #000000;
+  line-height: 1.6;
+  padding: 10px 0;
+}
+
+.Genres,
+.ProductionCompanies,
+.Rating,
+.Language,
+.MainCharacter,
+.Runtime,
+.MainChara {
+  margin-top: 16px;
+  color: #000;
+}
+
+.MainCharacter {
+  border-top: 2px solid #000000;
+  padding-top: 16px;
+}
+
+.MainCharacter h3 {
+  font-size: 24px;
+  color: #000000;
+}
+
+.MainCharacter p {
+  font-size: 20px;
+  color: #000000;
+}
+
+/* Animation */
+.DetailContainer {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

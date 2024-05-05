@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar.tsx';
-import Movies from './pages/movies/movies';
+import Movies from './pages/Movies/Movies.tsx';
+import Hero from './components/Hero/Hero.tsx';
+import TvShow from './pages/Tv-show/Tv-show.tsx';
+import DetailPage from './pages/DetailPage/DetailPage.tsx';
+
 // import PlayPause from './components/Button/button.tsx';
-import Hero from './components/hero/Hero.tsx';
-import TvShow from './pages/tv-show/tv-show.tsx';
 
 function App() {
   return (
@@ -14,9 +16,9 @@ function App() {
           <Route path="/" element={<Hero />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/tv-show" element={<TvShow />} />
+          <Route path="/detail/:id" element={<DetailPage />} />
         </Routes>
       </Router>
-
       {/* <PlayPause /> */}
     </div>
   );

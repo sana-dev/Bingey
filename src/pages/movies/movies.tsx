@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import './movies.css';
+import { Link } from 'react-router-dom';
+import './Movies.css';
 interface Movies {
   id: number;
   title: string;
@@ -34,16 +35,22 @@ function Movies() {
       <h2 className="heading"> Popular Movies</h2>
       <div className="App">
         {movies.map((movie) => (
-          <div className="movieContainer" key={movie.id}>
-            <div className="movieInfo">
-              <h2>{movie.title}</h2>
-              <div className="date">{movie.release_date}</div>
+          <Link
+            to={`/detail/${movie.id}`}
+            key={movie.id}
+            className="movieContainer"
+          >
+            <div key={movie.id}>
+              <div className="movieInfo">
+                <h2>{movie.title}</h2>
+                <div className="date">{movie.release_date}</div>
+              </div>
+              <img
+                src={`${IMAGE_BASE_URL}/${movie.poster_path}`}
+                alt={movie.title}
+              />
             </div>
-            <img
-              src={`${IMAGE_BASE_URL}/${movie.poster_path}`}
-              alt={movie.title}
-            />
-          </div>
+          </Link>
         ))}
       </div>
     </>

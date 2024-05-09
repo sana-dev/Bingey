@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './DetailPage.css';
 import FavButton from './FavButton/FavButton.tsx';
+import image from './Movieicon/movieicon.png';
 
 interface Genre {
   id: number;
@@ -54,8 +55,9 @@ function MovieDetailPage() {
       try {
         const response = await fetch(
           `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=credits`
-          //   `https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&append_to_response=credits`
+          //`https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&append_to_response=credits`
         );
+
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -67,8 +69,6 @@ function MovieDetailPage() {
           release_date: data.release_date,
           poster_path: data.poster_path,
           genres: data.genres,
-          original_language: data.original_language,
-          spoken_languages: data.spoken_languages,
           production_companies: data.production_companies,
           vote_average: data.vote_average,
           mainCharacter: data.credits.cast[0],
@@ -94,7 +94,6 @@ function MovieDetailPage() {
     genres,
     production_companies,
     vote_average,
-    original_language,
     mainCharacter,
     runtime,
   } = movieDetail;
@@ -118,10 +117,11 @@ function MovieDetailPage() {
       />
       <h2>{title}</h2>
       <div className="Runtime">
-        Runtime: {runtime && formatRuntime(runtime)}{' '}
+        RUNTIME: {runtime && formatRuntime(runtime)}{' '}
       </div>
-      <div className="Genres">{simplifyGenres(genres)}</div>
+      <div className="Genres"> GENRE: {simplifyGenres(genres)}</div>
       <div className="ProductionCompanies">
+        COMPANY:{' '}
         {production_companies &&
           production_companies.map((company) => (
             <span className="ProductionCompanies" key={company.id}>
@@ -129,8 +129,7 @@ function MovieDetailPage() {
             </span>
           ))}
       </div>
-      <div className="Rating">Rating: {vote_average}</div>
-      <div className="Language">Language: {original_language}</div>
+      <div className="Rating">RATING: {vote_average}</div>
       <div className="MainCharacter">
         <h3>Main Character:</h3>
         {mainCharacter && (
@@ -151,6 +150,10 @@ function MovieDetailPage() {
       <div className="Date">{release_date}</div>
       <p className="Overview">{overview}</p>
       <FavButton />
+      <div className="torch">
+        <div className="torchlight"></div>
+      </div>
+      <img className="movieicon" src={image} />
     </div>
   );
 }

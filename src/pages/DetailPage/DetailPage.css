@@ -1,7 +1,7 @@
 body {
-  background-color: #000; /* Set background color to black */
-  margin: 0; /* Remove default body margin */
-  padding: 0; /* Remove default body padding */
+  background-color: #000;
+  margin: 0;
+  padding: 0;
 }
 
 .DetailContainer {
@@ -11,6 +11,7 @@ body {
   background-color: rgb(255, 247, 5);
   border-radius: 8px;
   box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.4);
+  position: relative;
 }
 
 .DetailImage {
@@ -40,15 +41,16 @@ h1 {
   padding: 10px 0;
 }
 
+.MainCharacter,
+.Runtime,
+.MainChara,
 .Genres,
 .ProductionCompanies,
 .Rating,
-.Language,
-.MainCharacter,
-.Runtime,
-.MainChara {
+.Language {
   margin-top: 16px;
-  color: #000;
+  color: #080808;
+  font-weight: bold;
 }
 
 .MainCharacter {
@@ -65,10 +67,68 @@ h1 {
   font-size: 20px;
   color: #000000;
 }
+.movieicon {
+  width: 12rem;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  position: absolute;
+  right: 1.5%;
+  bottom: 1%;
+  z-index: 1;
+  rotate: 20deg;
+}
+.torch {
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+  position: absolute;
+  right: 13%;
+  bottom: -5%;
+  z-index: 1;
+  rotate: 110deg;
+}
+
+.torchlight {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 248, 196, 0.9) 0%,
+    rgba(79, 74, 74, 0) 80%
+  );
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  animation: flicker 1s infinite alternate;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 775px) {
+  .torch {
+    display: none;
+  }
+
+  .movieicon {
+    display: none;
+  }
+}
 
 /* Animation */
 .DetailContainer {
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes fadeIn {

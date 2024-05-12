@@ -4,69 +4,119 @@ body {
   padding: 0;
 }
 
+/* Main Container */
 .DetailContainer {
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
-  background-color: rgb(255, 247, 5);
+  background-color: #f7db08;
   border-radius: 8px;
-  box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   position: relative;
 }
 
+/* Main Image */
 .DetailImage {
   width: 100%;
   border-radius: 8px;
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
+/* Headings */
+h2 {
   margin-top: 20px;
   font-size: 28px;
-  color: #000000;
+  color: #000;
 }
 
+/* Details */
 .Date {
   margin-top: 8px;
   font-size: 20px;
-  color: #000000;
+  color: #000;
 }
 
 .Overview {
+  padding: 10%;
   margin-top: 16px;
   font-size: 18px;
   text-align: left;
-  color: #000000;
+  color: #000;
   line-height: 1.6;
-  padding: 10px 0;
 }
 
+/* General Text Styling */
 .MainCharacter,
 .Runtime,
 .MainChara,
 .Genres,
 .ProductionCompanies,
-.Rating,
-.Language {
+.Rating {
   margin-top: 16px;
-  color: #080808;
+  color: #333;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.MainCharacter:before,
+.Runtime:before,
+.MainChara:before,
+.Genres:before,
+.ProductionCompanies:before,
+.Rating:before {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.Runtime:before {
+  content: '⏱️';
+}
+
+.ActorIcon {
+  width: 80px;
+}
+.Genres:before {
+  content: '🎬';
+}
+
+.ProductionCompanies:before {
+  content: '🏭';
+}
+
+.Rating:before {
+  content: '⭐';
+}
+.Date:before {
+  content: '📆';
 }
 
 .MainCharacter {
-  border-top: 2px solid #000000;
-  padding-top: 16px;
+  text-align: center;
+  border-radius: 30%;
+  border-top: 2px solid #ffffff;
+  padding-top: 26px;
+  padding: 40px;
 }
 
-.MainCharacter h3 {
-  font-size: 24px;
-  color: #000000;
-}
-
-.MainCharacter p {
+h3 {
   font-size: 20px;
   color: #000000;
+  padding-right: 12px;
 }
+.MainText {
+  color: #000000;
+  padding-right: 12px;
+}
+.MainChara p {
+  font-size: 20px;
+  color: #000;
+}
+.MainCharaImg {
+  border-radius: 30px;
+  align-items: right;
+}
+/* Movie Icon */
 .movieicon {
   width: 12rem;
   -webkit-transform: scaleX(-1);
@@ -77,15 +127,17 @@ h1 {
   z-index: 1;
   rotate: 20deg;
 }
+
+/* Torch */
 .torch {
-  width: 600px;
-  height: 600px;
+  width: 800px;
+  height: 800px;
   overflow: hidden;
   position: absolute;
-  right: 13%;
+  right: 10%;
   bottom: -5%;
   z-index: 1;
-  rotate: 110deg;
+  rotate: 120deg;
 }
 
 .torchlight {
@@ -104,6 +156,40 @@ h1 {
   animation: flicker 1s infinite alternate;
 }
 
+/* Media Queries */
+@media (max-width: 775px) {
+  .torch,
+  .movieicon {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  h3 {
+    font-size: 15px;
+    color: #000000;
+    padding-right: 12px;
+  }
+  .MainText {
+    font-size: 10px;
+    color: #000000;
+    padding-right: 12px;
+  }
+  .MainCharaImg {
+    width: 120px;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes flicker {
   0% {
     opacity: 0.5;
@@ -113,29 +199,5 @@ h1 {
   }
   100% {
     opacity: 0.5;
-  }
-}
-
-@media (max-width: 775px) {
-  .torch {
-    display: none;
-  }
-
-  .movieicon {
-    display: none;
-  }
-}
-
-/* Animation */
-.DetailContainer {
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }

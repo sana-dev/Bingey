@@ -6,7 +6,6 @@ const FavoriteButton: React.FC = () => {
 
   const handleAddToFavorites = () => {
     setIsFavorite(!isFavorite);
-    // Implement logic to add/remove movie from favorites
     console.log(isFavorite ? 'Removed from favorites' : 'Added to favorites');
   };
 

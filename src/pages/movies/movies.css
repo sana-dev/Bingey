@@ -42,10 +42,10 @@
   opacity: 1;
 }
 
-.movieInfo h2,
+.movieInfo h1,
 .movieInfo .date {
   margin: 0;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .date {

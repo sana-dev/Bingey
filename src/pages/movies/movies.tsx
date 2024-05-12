@@ -32,7 +32,7 @@ function Movies() {
   /// I have to add the clean up
   return (
     <>
-      <h2 className="heading"> Popular Movies</h2>
+      <h1 className="heading"> Popular Movies</h1>
       <div className="App">
         {movies.map((movie) => (
           <Link
@@ -42,8 +42,12 @@ function Movies() {
           >
             <div key={movie.id}>
               <div className="movieInfo">
-                <h2>{movie.title}</h2>
-                <div className="date">{movie.release_date}</div>
+                <h1>{movie.title}</h1>
+
+                <div className="date">
+                  released:
+                  {movie.release_date}
+                </div>
               </div>
               <img
                 src={`${IMAGE_BASE_URL}/${movie.poster_path}`}

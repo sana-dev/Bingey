@@ -6,9 +6,32 @@
 }
 
 .HeartIcon {
+  position: relative;
+  left: 750px;
+  bottom: 45px;
   font-size: 38px;
   color: #000000;
   transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+}
+@media (max-width: 830px) {
+  .HeartIcon {
+    position: relative;
+    left: 400px;
+    bottom: 45px;
+    font-size: 38px;
+    color: #000000;
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+  }
+}
+@media (max-width: 500px) {
+  .HeartIcon {
+    position: relative;
+    left: 2px;
+    top: 2px;
+    font-size: 38px;
+    color: #000000;
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+  }
 }
 
 /* Apply animation on button click */

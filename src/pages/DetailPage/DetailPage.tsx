@@ -76,7 +76,6 @@ function MovieDetailPage() {
   if (!movieDetail) {
     return <div>Loading...</div>;
   }
-
   const {
     title,
     poster_path,
@@ -88,11 +87,6 @@ function MovieDetailPage() {
     mainCharacter,
     runtime,
   } = movieDetail;
-
-  // const simplifyGenres = (genres: Genre[] | undefined): string =>
-  //   genres && genres.length > 0
-  //     ? genres.map((genre) => genre.name.split('  ')[0]).join('')
-  //     : ' ';
   const simplifyGenres = (genres: Genre[] | undefined): string =>
     genres && genres.length > 0 ? genres[0].name.split('  ')[0] : ' ';
 

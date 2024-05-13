@@ -30,6 +30,11 @@ const NavBar = (props: NavBarProps) => {
             TV Show
           </NavLink>
         </li>
+        {/* <li>
+          <NavLink to="/FavButton" className="nav-link">
+            Favs
+          </NavLink>
+        </li> */}
       </ul>
     </nav>
   );

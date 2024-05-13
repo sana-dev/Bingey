@@ -1,14 +1,14 @@
 .hero .text-wrapper,
-p {
+.hero p {
   color: #eeeeee;
-  width: 400px;
-  padding: 10rem 10rem;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 400px;
+  padding: 3rem;
+  margin: 90px auto;
   font-size: 18px;
   text-align: center;
-  opacity: 10;
+  opacity: 1;
 }
+
 .hero video {
   position: absolute;
   z-index: -1;
@@ -25,41 +25,46 @@ p {
   height: 50px;
   text-align: center;
   margin: 15px;
-  width: 200px;
+  padding: 0 20px;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 25px;
   font-size: 20px;
-  background: linear-gradient(0, 0, 0, 0.9);
-  background-size: cover;
+  color: rgb(198, 166, 4);
+  display: inline-block;
 }
 
 .btn:hover span {
   letter-spacing: 2px;
 }
+
 @media screen and (max-width: 766px) {
   .hero .text-wrapper,
-  p {
-    width: 300px;
-    padding: 7.5rem;
+  .hero p {
+    max-width: 300px;
+    padding: 1.5rem;
     font-size: 16px;
   }
 
   .btn {
-    width: 150px;
+    padding: 0 15px;
     font-size: 16px;
+    height: 40px;
+    line-height: 40px;
   }
 }
 
 @media screen and (max-width: 479px) {
   .hero .text-wrapper,
-  p {
-    width: 250px;
-    padding: 3rem;
+  .hero p {
+    max-width: 250px;
+    padding: 1rem;
     font-size: 14px;
   }
 
   .btn {
-    width: 120px;
+    padding: 0 10px;
     font-size: 14px;
+    height: 30px;
+    line-height: 30px;
   }
 }

@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import FavButton from '../../components/FavButton/FavButton.tsx';
 import './DetailPage.css';
-
+import { useContext } from 'react';
+import { ThemeContext } from '../../App';
 import image from './Icon/movieicon.png';
 import ActorIcon from './Icon/actoricon.png';
 import {
@@ -15,6 +16,11 @@ const API_KEY = '2510ebb73f5853851b304454d610807b';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 
 function MovieDetailPage() {
+  const darkTheme = useContext(ThemeContext);
+  const themeStyles = {
+    backgroundColor: darkTheme ? '#000000' : ' #ADD8E6',
+    heading: darkTheme ? ' #ADD8E6' : '#000000',
+  };
   const { id } = useParams<{ id: string }>();
   const [movieDetail, setMovieDetail] = useState<MovieDetail | null>(null);
 
@@ -111,47 +117,51 @@ function MovieDetailPage() {
       : ' ';
 
   return (
-    <div className="DetailContainer">
-      <img
-        src={`${IMAGE_BASE_URL}/${poster_path}`}
-        alt={title}
-        className="DetailImage"
-      />
-      <h2>{title}</h2>
-      <FavButton />
-      <div className="Runtime">
-        RUNTIME: {runtime && formatRuntime(runtime)}{' '}
-      </div>
-      <div className="Genres"> GENRE: {simplifyGenres(genres)}</div>
-      <div className="ProductionCompanies">
-        Production Company: {Company(production_companies)}
-      </div>
+    <div style={themeStyles}>
+      <div className="MainContainer">
+        <div className="DetailContainer">
+          <img
+            src={`${IMAGE_BASE_URL}/${poster_path}`}
+            alt={title}
+            className="DetailImage"
+          />
+          <h2 className="DetailHeading">{title}</h2>
+          <FavButton />
+          <div className="Runtime">
+            RUNTIME: {runtime && formatRuntime(runtime)}{' '}
+          </div>
+          <div className="Genres"> GENRE: {simplifyGenres(genres)}</div>
+          <div className="ProductionCompanies">
+            Production Company: {Company(production_companies)}
+          </div>
 
-      <div className="Rating">RATING: {RoundRating(vote_average)}</div>
-      <div className="Date"> Release Date: {release_date}</div>
-      <p className="Overview">{overview}</p>
-      <div className="MainCharacter">
-        {mainCharacter && (
-          <div className="MainChara">
-            <div className="MainText">
-              <img className="ActorIcon" src={ActorIcon} alt="Actor Icon" />
-              <h3>Main Character:</h3>
-              {mainCharacter.name} as {mainCharacter.character}
-            </div>
-            {mainCharacter.profile_path && (
-              <img
-                className="MainCharaImg"
-                src={`${IMAGE_BASE_URL}/${mainCharacter.profile_path}`}
-                alt={mainCharacter.name}
-              />
+          <div className="Rating">RATING: {RoundRating(vote_average)}</div>
+          <div className="Date"> Release Date: {release_date}</div>
+          <p className="Overview">{overview}</p>
+          <div className="MainCharacter">
+            {mainCharacter && (
+              <div className="MainChara">
+                <div className="MainText">
+                  <img className="ActorIcon" src={ActorIcon} alt="Actor Icon" />
+                  <h3>Main Character:</h3>
+                  {mainCharacter.name} as {mainCharacter.character}
+                </div>
+                {mainCharacter.profile_path && (
+                  <img
+                    className="MainCharaImg"
+                    src={`${IMAGE_BASE_URL}/${mainCharacter.profile_path}`}
+                    alt={mainCharacter.name}
+                  />
+                )}
+              </div>
             )}
           </div>
-        )}
+          <div className="torch">
+            <div className="torchlight"></div>
+          </div>
+          <img className="movieicon" src={image} />
+        </div>
       </div>
-      <div className="torch">
-        <div className="torchlight"></div>
-      </div>
-      <img className="movieicon" src={image} />
     </div>
   );
 }

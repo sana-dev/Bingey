@@ -4,7 +4,9 @@ body {
   padding: 0;
 }
 
-/* Main Container */
+.MainContainer {
+  padding: 20px;
+}
 .DetailContainer {
   max-width: 800px;
   margin: 50px auto;
@@ -23,7 +25,7 @@ body {
 }
 
 /* Headings */
-h2 {
+.DetailHeading {
   margin-top: 20px;
   font-size: 28px;
   color: #000;

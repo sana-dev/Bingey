@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import { ThemeContext } from '../../App';
 import { Link } from 'react-router-dom';
 import './Movies.css';
 interface Movies {
@@ -9,6 +11,11 @@ interface Movies {
 }
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 function Movies() {
+  const darkTheme = useContext(ThemeContext);
+  const themeStyles = {
+    backgroundColor: darkTheme ? '#000000' : ' #ADD8E6',
+    heading: darkTheme ? ' #ADD8E6' : '#000000',
+  };
   const [movies, setMovies] = useState<Movies[]>([]);
   const apiKey = '2510ebb73f5853851b304454d610807b';
   const popularUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`;
@@ -32,30 +39,32 @@ function Movies() {
   /// I have to add the clean up
   return (
     <>
-      <h1 className="heading"> Popular Movies</h1>
-      <div className="App">
-        {movies.map((movie) => (
-          <Link
-            to={`/detail/${movie.id}`}
-            key={movie.id}
-            className="movieContainer"
-          >
-            <div key={movie.id}>
-              <div className="movieInfo">
-                <h1>{movie.title}</h1>
+      <div style={themeStyles}>
+        <h1 className="heading"> Popular Movies</h1>
+        <div className="App">
+          {movies.map((movie) => (
+            <Link
+              to={`/detail/${movie.id}`}
+              key={movie.id}
+              className="movieContainer"
+            >
+              <div key={movie.id}>
+                <div className="movieInfo">
+                  <h1>{movie.title}</h1>
 
-                <div className="date">
-                  released:
-                  {movie.release_date}
+                  <div className="date">
+                    released:
+                    {movie.release_date}
+                  </div>
                 </div>
+                <img
+                  src={`${IMAGE_BASE_URL}/${movie.poster_path}`}
+                  alt={movie.title}
+                />
               </div>
-              <img
-                src={`${IMAGE_BASE_URL}/${movie.poster_path}`}
-                alt={movie.title}
-              />
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </>
   );

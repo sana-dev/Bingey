@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Tv-show.css';
+import { useContext } from 'react';
+import { ThemeContext } from '../../App';
 
 interface TvShow {
   id: number;
@@ -9,6 +11,12 @@ interface TvShow {
 }
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 function TvShow() {
+  const darkTheme = useContext(ThemeContext);
+  const themeStyles = {
+    backgroundColor: darkTheme ? '#000000' : ' #ADD8E6',
+    color: darkTheme ? '#ffffff' : '#ffffff',
+  };
+
   const [TvShow, setTvShow] = useState<TvShow[]>([]);
   const apiKey = '2510ebb73f5853851b304454d610807b';
   const tvShowUrl = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`;
@@ -32,27 +40,29 @@ function TvShow() {
   /// I have to add the clean up
   return (
     <>
-      <h2 className="heading"> Popular Show of All-Times</h2>
-      <div className="App">
-        {TvShow.map((TvShow) => (
-          <Link
-            to={`/detail/${TvShow.id}`}
-            key={TvShow.id}
-            className="movieContainer"
-          >
-            <div key={TvShow.id}>
-              <div className="tvShow-Info">
-                <h2> {TvShow.original_name} </h2>
+      <div style={themeStyles}>
+        <h2 className="heading"> Popular Show of All-Times</h2>
+        <div className="App">
+          {TvShow.map((TvShow) => (
+            <Link
+              to={`/detail/${TvShow.id}`}
+              key={TvShow.id}
+              className="movieContainer"
+            >
+              <div key={TvShow.id}>
+                <div className="tvShow-Info">
+                  <h2> {TvShow.original_name} </h2>
+                </div>
+                <div>
+                  <img
+                    src={`${IMAGE_BASE_URL}/${TvShow.poster_path}`}
+                    alt={TvShow.original_name}
+                  />
+                </div>
               </div>
-              <div>
-                <img
-                  src={`${IMAGE_BASE_URL}/${TvShow.poster_path}`}
-                  alt={TvShow.original_name}
-                />
-              </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
     </>
   );

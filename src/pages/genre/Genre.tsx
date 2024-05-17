@@ -1,10 +1,10 @@
-import { useState, useEffect, useContext, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import './Genre.css';
-import { ThemeContext } from '../../App.tsx';
 import {
   Genre as GenreType,
   MovieDetail,
 } from '../detail/Interfaces/interfaces.tsx';
+import { useThemeContext } from '../../hooks/useThemeContext.ts';
 
 const API_KEY = '2510ebb73f5853851b304454d610807b';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
@@ -14,7 +14,7 @@ function Genre() {
   const [selectedGenre, setSelectedGenre] = useState<number | null>(null);
   const [movieDetail, setMovieDetail] = useState<MovieDetail[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const darkTheme = useContext(ThemeContext);
+  const { darkTheme } = useThemeContext();
 
   console.log('Selected genre', selectedGenre);
 

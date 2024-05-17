@@ -1,16 +1,17 @@
-import { useState, useContext } from 'react';
-import { ThemeContext } from '../../App';
+import { useState } from 'react';
 import './NavBar.css';
 import { NavLink, Link } from 'react-router-dom';
 import logoImage from './logo/logo.png';
+import { useThemeContext } from '../../hooks/useThemeContext';
 interface NavBarProps {
   title: string;
 }
 const NavBar = (props: NavBarProps) => {
-  const darkTheme = useContext(ThemeContext);
+  const { darkTheme, toggleTheme } = useThemeContext();
+
   const themeStyles = {
-    backgroundColor: darkTheme ? '#000000' : ' #4C7876',
-    color: darkTheme ? ' #ADD8E6' : '#000000',
+    backgroundColor: darkTheme ? '#000000' : '#4C7876',
+    color: darkTheme ? '#ADD8E6' : '#000000',
     textColor: darkTheme ? '#ffffff' : '#000000',
   };
   const [menuOpen, setMenuOpen] = useState(false);
@@ -38,8 +39,13 @@ const NavBar = (props: NavBarProps) => {
           </li>
           <li>
             <NavLink to="/Genre-Galore" className="nav-link">
-              Genre Galore
+              Genre
             </NavLink>
+          </li>
+          <li>
+            <button className="toggle" onClick={toggleTheme}>
+              Toggle theme
+            </button>
           </li>
         </ul>
       </nav>

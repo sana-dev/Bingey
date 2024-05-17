@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './TvShow.css';
-import { useContext } from 'react';
-import { ThemeContext } from '../../App';
+import { useThemeContext } from '../../hooks/useThemeContext';
 
 interface TvShow {
   id: number;
@@ -11,7 +10,8 @@ interface TvShow {
 }
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 function TvShow() {
-  const darkTheme = useContext(ThemeContext);
+  const { darkTheme } = useThemeContext();
+
   const themeStyles = {
     backgroundColor: darkTheme ? '#000000' : ' #9AC3C0',
     color: darkTheme ? '#ffffff' : '#ffffff',

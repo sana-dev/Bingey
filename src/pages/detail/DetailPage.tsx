@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import FavButton from '../../components/fav-button/FavButton.tsx';
 import './DetailPage.css';
-import { useContext } from 'react';
-import { ThemeContext } from '../../App.tsx';
 import image from './Icon/movieicon.png';
 import ActorIcon from './Icon/actoricon.png';
 import {
@@ -11,12 +9,13 @@ import {
   ProductionCompany,
   MovieDetail,
 } from './Interfaces/interfaces.tsx';
+import { useThemeContext } from '../../hooks/useThemeContext.ts';
 
 const API_KEY = '2510ebb73f5853851b304454d610807b';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 
 function MovieDetailPage() {
-  const darkTheme = useContext(ThemeContext);
+  const { darkTheme } = useThemeContext();
   const themeStyles = {
     backgroundColor: darkTheme ? '#000000' : ' #9AC3C0',
     heading: darkTheme ? ' #ADD8E6' : '#000000',

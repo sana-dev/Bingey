@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { useContext } from 'react';
-import { ThemeContext } from '../../App';
 import { Link } from 'react-router-dom';
 import './Movies.css';
+import { useThemeContext } from '../../hooks/useThemeContext';
 interface Movies {
   id: number;
   title: string;
@@ -11,7 +10,8 @@ interface Movies {
 }
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 function Movies() {
-  const darkTheme = useContext(ThemeContext);
+  const { darkTheme } = useThemeContext();
+
   const themeStyles = {
     backgroundColor: darkTheme ? '#000000' : ' #9AC3C0',
     heading: darkTheme ? ' #ADD8E6' : '#000000',

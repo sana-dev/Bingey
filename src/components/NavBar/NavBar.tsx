@@ -6,8 +6,15 @@ import logoImage from './logo/logo.png';
 interface NavBarProps {
   title: string;
 }
+
 const NavBar = (props: NavBarProps) => {
   const darkTheme = useContext(ThemeContext);
+
+  const [toggleTheme, setToggleTheme] = useState(true);
+
+  function toggleTheme() {
+    setDarkTheme((prevDarkTheme) => !prevDarkTheme);
+  }
   const themeStyles = {
     backgroundColor: darkTheme ? '#000000' : ' #4C7876',
     color: darkTheme ? ' #ADD8E6' : '#000000',
@@ -31,6 +38,7 @@ const NavBar = (props: NavBarProps) => {
               Movies
             </NavLink>
           </li>
+
           <li>
             <NavLink to="/tv-show" className="nav-link">
               TV Show
@@ -38,8 +46,11 @@ const NavBar = (props: NavBarProps) => {
           </li>
           <li>
             <NavLink to="/Genre-Galore" className="nav-link">
-              Genre Galore
+              Genre
             </NavLink>
+          </li>
+          <li>
+            <button>toggle</button>
           </li>
         </ul>
       </nav>

@@ -10,29 +10,23 @@ import React, { useState } from 'react';
 export const ThemeContext = React.createContext<boolean>(false);
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState(true);
-
-  function toggleTheme() {
-    setDarkTheme((prevDarkTheme) => !prevDarkTheme);
-  }
-
   return (
     <>
-      <button
-        className="toggle"
-        onClick={toggleTheme}
-        style={{
-          backgroundColor: 'yellow',
-          borderRadius: '50%',
-          padding: '5px',
-          margin: '2px',
-          position: 'relative',
-          left: '93%',
-        }}
-      >
-        🔵
-      </button>
       <ThemeContext.Provider value={darkTheme}>
+        {/* <button
+          className="toggle"
+          onClick={toggleTheme}
+          style={{
+            backgroundColor: 'yellow',
+            borderRadius: '50%',
+            padding: '5px',
+            margin: '2px',
+            position: 'relative',
+            left: '93%',
+          }}
+        >
+          🔵
+        </button> */}
         <Router>
           <NavBar title="BINGEY" />
           <Routes>

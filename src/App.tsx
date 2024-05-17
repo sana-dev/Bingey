@@ -1,11 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar/NavBar.tsx';
-import Movies from './pages/Movies/Movies.tsx';
-import Hero from './components/Hero/Hero.tsx';
-import TvShow from './pages/Tv-show/Tv-show.tsx';
-import DetailPage from './pages/DetailPage/DetailPage.tsx';
-import GenreGalore from './pages/GenrePage/GenreGalore.tsx';
 import React, { useState } from 'react';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+
+import NavBar from './components/nav-bar/NavBar.tsx';
+import DetailPage from './pages/detail/DetailPage.tsx';
+import GenreGalore from './pages/genre/Genre.tsx';
+import Movies from './pages/movies/Movies.tsx';
+import TvShow from './pages/tv-show/TvShow.tsx';
+import Hero from './components/hero/Hero.tsx';
 
 export const ThemeContext = React.createContext<boolean>(false);
 

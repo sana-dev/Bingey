@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './Tv-show.css';
+import './TvShow.css';
 import { useContext } from 'react';
 import { ThemeContext } from '../../App';
 

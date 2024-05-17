@@ -1,20 +1,22 @@
 import { useState, useEffect, useContext, useCallback, useMemo } from 'react';
-import './GenreGalore.css';
-import { ThemeContext } from '../../App';
+import './Genre.css';
+import { ThemeContext } from '../../App.tsx';
 import {
-  Genre,
+  Genre as GenreType,
   MovieDetail,
-} from '../../pages/DetailPage/Interfaces/interfaces.tsx';
+} from '../detail/Interfaces/interfaces.tsx';
 
 const API_KEY = '2510ebb73f5853851b304454d610807b';
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 
-function GenreGalore() {
-  const [genres, setGenres] = useState<Genre[]>([]);
+function Genre() {
+  const [genres, setGenres] = useState<GenreType[]>([]);
   const [selectedGenre, setSelectedGenre] = useState<number | null>(null);
   const [movieDetail, setMovieDetail] = useState<MovieDetail[]>([]);
   const [error, setError] = useState<string | null>(null);
   const darkTheme = useContext(ThemeContext);
+
+  console.log('Selected genre', selectedGenre);
 
   const themeStyles = useMemo(
     () => ({
@@ -110,7 +112,7 @@ function GenreGalore() {
   );
 }
 
-export default GenreGalore;
+export default Genre;
 
 // import { useState, useEffect, useContext, useCallback, useMemo } from 'react';
 // import './GenreGalore.css';

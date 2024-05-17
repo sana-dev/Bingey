@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import FavButton from '../../components/FavButton/FavButton.tsx';
+import FavButton from '../../components/fav-button/FavButton.tsx';
 import './DetailPage.css';
 import { useContext } from 'react';
-import { ThemeContext } from '../../App';
+import { ThemeContext } from '../../App.tsx';
 import image from './Icon/movieicon.png';
 import ActorIcon from './Icon/actoricon.png';
 import {
@@ -110,11 +110,14 @@ function MovieDetailPage() {
     }
   };
   const Company = (
-    ProductionCompany: ProductionCompany[] | undefined
-  ): string =>
-    production_companies && production_companies.length > 0
+    productionCompany: ProductionCompany[] | undefined
+  ): string => {
+    console.log('prod comp', productionCompany);
+
+    return production_companies && production_companies.length > 0
       ? production_companies[0].name.split('  ')[0]
       : ' ';
+  };
 
   return (
     <div style={themeStyles}>

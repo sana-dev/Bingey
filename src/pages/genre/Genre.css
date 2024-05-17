@@ -7,6 +7,9 @@ h2 {
   padding: 10px;
   font-size: 30px;
 }
+strong {
+  color: white;
+}
 
 .list {
   padding: 10px;
@@ -16,41 +19,44 @@ h2 {
 }
 
 .listItems {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px #3a66af;
   position: relative;
   width: 300px;
   margin: 20px;
 }
+.listImg {
+  width: 100%;
+}
 
-/* Media queries */
-@media (max-width: 768px) {
-  .list {
-    justify-content: center;
-  }
+.list {
+  justify-content: center;
+}
 
+.listItems {
+  width: calc(100% - 40px);
+}
+
+@media (min-width: 400px) {
   .listItems {
-    width: calc(60% - 40px);
+    width: calc(50% - 40px);
   }
 }
 
-/* For tablets and larger screens */
-@media (min-width: 769px) {
-  .list {
-    justify-content: flex-start;
-  }
-
+@media (min-width: 786px) {
   .listItems {
-    width: calc(33% - 40px); /* Adjusted to ensure three items in a row */
+    width: calc(33.33% - 40px);
   }
 }
 
-@media (min-width: 1080px) {
-  .list {
-    justify-content: flex-start;
-  }
-
+@media (min-width: 992px) {
   .listItems {
-    /* width: calc(20% - 40px);  */
+    width: calc(25% - 40px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .listItems {
+    width: calc(20% - 40px);
   }
 }
 
@@ -73,7 +79,7 @@ h2 {
 
 .genreButton:hover {
   background: #f6f9fe;
-  color: #174ea6;
+  color: #3a66af;
 }
 
 .genreButton:active {

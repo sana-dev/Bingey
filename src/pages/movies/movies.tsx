@@ -13,7 +13,7 @@ const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w200';
 function Movies() {
   const darkTheme = useContext(ThemeContext);
   const themeStyles = {
-    backgroundColor: darkTheme ? '#000000' : ' #ADD8E6',
+    backgroundColor: darkTheme ? '#000000' : ' #9AC3C0',
     heading: darkTheme ? ' #ADD8E6' : '#000000',
   };
   const [movies, setMovies] = useState<Movies[]>([]);

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Movies.css';
 import { useThemeContext } from '../../hooks/useThemeContext';
+//
 interface Movies {
   id: number;
   title: string;

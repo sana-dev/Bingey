@@ -1,0 +1,113 @@
+.mainbox {
+  padding: 17%;
+}
+
+h2 {
+  margin-left: 10px;
+  padding: 10px;
+  font-size: 30px;
+}
+
+.list {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.listItems {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+  width: 300px;
+  margin: 20px;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .list {
+    justify-content: center;
+  }
+
+  .listItems {
+    width: calc(60% - 40px);
+  }
+}
+
+/* For tablets and larger screens */
+@media (min-width: 769px) {
+  .list {
+    justify-content: flex-start;
+  }
+
+  .listItems {
+    width: calc(33% - 40px); /* Adjusted to ensure three items in a row */
+  }
+}
+
+@media (min-width: 1080px) {
+  .list {
+    justify-content: flex-start;
+  }
+
+  .listItems {
+    width: calc(20% - 40px); /* Adjusted to ensure five items in a row */
+  }
+}
+
+.genreButton {
+  margin: 5px;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  height: 42px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  padding: 2px 20px;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.genreButton:hover {
+  background: #f6f9fe;
+  color: #174ea6;
+}
+
+.genreButton:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%),
+    0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.genreButton:focus {
+  outline: none;
+  border: 2px solid #4285f4;
+}
+
+.genreButton:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.genreButton:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 2px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 6px 10px 4px;
+}
+
+.genreButton:not(:disabled):focus {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.genreButton:not(:disabled):active {
+  box-shadow: rgba(136, 122, 13, 0.3) 0 4px 4px 0,
+    rgba(190, 203, 212, 0.15) 0 8px 12px 6px;
+}
+
+.genreButton:disabled {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}

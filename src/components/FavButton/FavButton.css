@@ -7,37 +7,36 @@
 
 .HeartIcon {
   position: relative;
-  left: 750px;
-  bottom: 45px;
+  left: 530px;
+  bottom: 54px;
   font-size: 38px;
   color: #000000;
-  transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+  transition: transform 0.3s ease-in-out;
 }
-@media (max-width: 830px) {
+/* @media (max-width: 850px) {
   .HeartIcon {
     position: relative;
-    left: 400px;
-    bottom: 45px;
+    left: 470px;
+    bottom: 48px;
     font-size: 38px;
     color: #000000;
-    transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+    transition: transform 0.3s ease-in-out;
   }
-}
-@media (max-width: 500px) {
+} */
+@media (max-width: 650px) {
   .HeartIcon {
     position: relative;
-    left: 2px;
-    top: 2px;
+    left: 0px;
+    top: 0px;
     font-size: 38px;
     color: #000000;
-    transition: transform 0.3s ease-in-out; /* Add transition for smooth animation */
+    transition: transform 0.3s ease-in-out;
   }
 }
 
-/* Apply animation on button click */
 .FavoriteButton.clicked .HeartIcon {
-  transform: scale(1.2); /* Scale up the icon on click */
-  animation: bounce 0.6s; /* Apply the bounce animation */
+  transform: scale(1.2);
+  animation: bounce 0.6s;
 }
 
 @keyframes bounce {

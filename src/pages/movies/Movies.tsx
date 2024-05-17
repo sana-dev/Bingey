@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Movies.css';
 import { useThemeContext } from '../../hooks/useThemeContext';
-//
+
 interface Movies {
   id: number;
   title: string;
@@ -37,7 +37,6 @@ function Movies() {
       console.error('Error fetching data:', error);
     }
   };
-  /// I have to add the clean up
   return (
     <>
       <div style={themeStyles}>

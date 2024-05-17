@@ -17,21 +17,18 @@ body {
   position: relative;
 }
 
-/* Main Image */
 .DetailImage {
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Headings */
 .DetailHeading {
   margin-top: 20px;
   font-size: 28px;
   color: #000;
 }
 
-/* Details */
 .Date {
   margin-top: 8px;
   font-size: 20px;
@@ -47,7 +44,6 @@ body {
   line-height: 1.6;
 }
 
-/* General Text Styling */
 .MainCharacter,
 .Runtime,
 .MainChara,
@@ -118,7 +114,7 @@ h3 {
   border-radius: 30px;
   align-items: right;
 }
-/* Movie Icon */
+
 .movieicon {
   width: 12rem;
   -webkit-transform: scaleX(-1);
@@ -130,7 +126,6 @@ h3 {
   rotate: 20deg;
 }
 
-/* Torch */
 .torch {
   width: 800px;
   height: 800px;
@@ -157,8 +152,6 @@ h3 {
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
   animation: flicker 1s infinite alternate;
 }
-
-/* Media Queries */
 @media (max-width: 775px) {
   .torch,
   .movieicon {

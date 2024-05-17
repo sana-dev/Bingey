@@ -52,8 +52,6 @@
     width: calc(50% - 20px);
   }
 }
-
-/* For tablets and larger screens */
 @media (min-width: 769px) {
   .App {
     justify-content: flex-start;

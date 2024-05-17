@@ -44,7 +44,7 @@ const NavBar = (props: NavBarProps) => {
           </li>
           <li>
             <button className="toggle" onClick={toggleTheme}>
-              Toggle theme
+              🔵
             </button>
           </li>
         </ul>

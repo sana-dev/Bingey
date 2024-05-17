@@ -50,7 +50,7 @@ h2 {
   }
 
   .listItems {
-    width: calc(20% - 40px); /* Adjusted to ensure five items in a row */
+    /* width: calc(20% - 40px);  */
   }
 }
 

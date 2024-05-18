@@ -6,6 +6,7 @@ body {
 
 .MainContainer {
   padding: 20px;
+  margin: 20px;
 }
 .DetailContainer {
   max-width: 800px;
@@ -94,11 +95,12 @@ body {
   border-radius: 30%;
   border-top: 2px solid #ffffff;
   padding-top: 26px;
-  padding: 40px;
+  padding: 50px;
+  margin-left: 80px;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 10px;
   color: #000000;
   padding-right: 12px;
 }
@@ -152,26 +154,31 @@ h3 {
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
   animation: flicker 1s infinite alternate;
 }
-@media (max-width: 775px) {
+@media (max-width: 680px) {
   .torch,
   .movieicon {
     display: none;
   }
+  .MainCharacter {
+    margin-left: 2px;
+  }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 550px) {
   h3 {
-    font-size: 15px;
+    font-size: 20px;
     color: #000000;
     padding-right: 12px;
   }
   .MainText {
-    font-size: 10px;
     color: #000000;
     padding-right: 12px;
   }
   .MainCharaImg {
     width: 120px;
+  }
+  .MainCharacter {
+    margin-left: 2px;
   }
 }
 

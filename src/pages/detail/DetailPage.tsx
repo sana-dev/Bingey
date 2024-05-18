@@ -146,7 +146,12 @@ function MovieDetailPage() {
                 <div className="MainText">
                   <img className="ActorIcon" src={ActorIcon} alt="Actor Icon" />
                   <h3>Main Character:</h3>
-                  {mainCharacter.name} as {mainCharacter.character}
+                  {mainCharacter.name}
+                  <br />
+                  as
+                  <br />
+                  {mainCharacter.character}
+                  <br />
                 </div>
                 {mainCharacter.profile_path && (
                   <img
